@@ -5,10 +5,9 @@ import (
 	"strconv"
 	"time"
 
-	"client"
-
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"github.com/hashicorp/terraform-provider-faux-web-services/client"
 )
 
 func resourceServer() *schema.Resource {
@@ -37,8 +36,7 @@ func resourceServerCreate(ctx context.Context, d *schema.ResourceData, m interfa
 	// Warning or errors can be collected in a slice type
 	var diags diag.Diagnostics
 
-	// TODO: MIGHT BE WRONG (check resource in cups)
-	name := d.Get("name")
+	name := d.Get("name").(string)
 	o, err := c.CreateServer(name)
 	if err != nil {
 		return diag.FromErr(err)
@@ -78,8 +76,7 @@ func resourceServerUpdate(ctx context.Context, d *schema.ResourceData, m interfa
 	serverID := d.Id()
 
 	if d.HasChange("name") {
-		// TODO: MIGHT BE WRONG (check resource in cups)
-		name := d.Get("name")
+		name := d.Get("name").(string)
 		_, err := c.UpdateServer(serverID, name)
 		if err != nil {
 			return diag.FromErr(err)

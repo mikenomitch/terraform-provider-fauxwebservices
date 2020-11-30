@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
+	"strings"
 )
 
 // Server -
@@ -36,7 +37,7 @@ func (c *Client) GetServer(serverID string) (*Server, error) {
 
 // CreateServer - Create new server
 func (c *Client) CreateServer(name string) (*Server, error) {
-	req, err := http.NewRequest("POST", fmt.Sprintf("%s/servers", c.HostURL), name)
+	req, err := http.NewRequest("POST", fmt.Sprintf("%s/servers", c.HostURL), strings.NewReader(name))
 	if err != nil {
 		return nil, err
 	}
@@ -57,7 +58,7 @@ func (c *Client) CreateServer(name string) (*Server, error) {
 
 // UpdateServer - Updates a server
 func (c *Client) UpdateServer(serverID string, name string) (*Server, error) {
-	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/servers/%s", c.HostURL, serverID), name)
+	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/servers/%s", c.HostURL, serverID), strings.NewReader(name))
 	if err != nil {
 		return nil, err
 	}

@@ -10,7 +10,7 @@ import (
 // HostURL - Default Hashicups URL
 const HostURL string = "https://tfe-zone-cc09c2e7.ngrok.io"
 
-// HostURL - Default Token to be removed
+// DefaultToken - Default Token to be removed
 const DefaultToken string = "TODOFILLIN"
 
 // Client -
