@@ -24,7 +24,7 @@ func Provider() *schema.Provider {
 			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
-			"fws_server": resourceServer(),
+			"fauxwebservices_server": resourceServer(),
 		},
 		DataSourcesMap:       map[string]*schema.Resource{},
 		ConfigureContextFunc: providerConfigure,
@@ -50,8 +50,8 @@ func providerConfigure(ctx context.Context, d *schema.ResourceData) (interface{}
 	if err != nil {
 		diags = append(diags, diag.Diagnostic{
 			Severity: diag.Error,
-			Summary:  "Unable to create HashiCups client",
-			Detail:   "Unable to create anonymous HashiCups client",
+			Summary:  "Unable to create FWS client",
+			Detail:   "Unable to create anonymous FWS client",
 		})
 		return nil, diags
 	}

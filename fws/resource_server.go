@@ -24,7 +24,7 @@ func resourceServer() *schema.Resource {
 			},
 			"name": &schema.Schema{
 				Type:     schema.TypeString,
-				Optional: false,
+				Required: true,
 			},
 		},
 	}
