@@ -1,4 +1,4 @@
-module github.com/hashicorp/terraform-provider-faux-web-services
+module github.com/hashicorp/terraform-provider-fauxwebservices
 
 go 1.14
 

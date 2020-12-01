@@ -7,7 +7,7 @@ This provider adds fake infrastructure resources to a simple web service that di
 Run the following command to build the provider
 
 ```shell
-$ go build -o terraform-provider-hashicups
+$ go build -o terraform-provider-fauxwebservvices
 ```
 
 <!-- ## Test sample configuration
