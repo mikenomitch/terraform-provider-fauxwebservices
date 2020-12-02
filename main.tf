@@ -9,29 +9,37 @@ terraform {
 
 provider "fauxwebservices" {
   host = "https://tfe-zone-cc09c2e7.ngrok.io"
-  token = "IZlB19VWu2dBtA.atlasv1.1vz9RztBTM0fk0NhZTv1TWz2jkSdrvyzIdUnHBTht28fUwDbnB7RlQaWhJXuTL0v5DY"
 }
 
 resource "fauxwebservices_server" "test-server" {
-  name = "my-demo-server"
-}
-
-resource "fauxwebservices_server" "test-server-2" {
-  name = "my-demo-server-2"
+  name = "Server Alpha"
 }
 
 resource "fauxwebservices_database" "test-database" {
-  name = "my-demo-db"
+  name = "Prod DB"
+}
+
+// ==========
+// Uncomment the resources below and rerun
+// `terraform apply` to see updates.
+// ==========
+
+resource "fauxwebservices_server" "test-server-2" {
+  name = "Server Bravo"
+}
+
+resource "fauxwebservices_server" "test-server-3" {
+  name = "Server Charlie"
 }
 
 resource "fauxwebservices_database" "test-database-2" {
-  name = "my-demo-db-2"
+  name = "Replica DB"
 }
 
 resource "fauxwebservices_bucket" "test-bucket" {
-  name = "my-demo-bucket"
+  name = "Easy File Storage"
 }
 
-// resource "fauxwebservices_vpc" "test-vpc" {
-//   name = "my-demo-vpc"
-// }
+output "message" {
+  value = "You ran a Terraform apply! View your example resources at: https://tfe-zone-cc09c2e7.ngrok.io/fws"
+}
