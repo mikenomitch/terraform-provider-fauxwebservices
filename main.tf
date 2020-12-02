@@ -12,19 +12,25 @@ provider "fauxwebservices" {
   token = "IZlB19VWu2dBtA.atlasv1.1vz9RztBTM0fk0NhZTv1TWz2jkSdrvyzIdUnHBTht28fUwDbnB7RlQaWhJXuTL0v5DY"
 }
 
-resource "fauxwebservices_server" "test-server-2" {
-  name = "my-demo-server-new!"
+resource "fauxwebservices_server" "test-server" {
+  name = "my-demo-server"
 }
 
-// resource "fauxwebservices_database" "test-db" {
-//   name = "my-demo-db"
-//   type = "t1"
-// }
+resource "fauxwebservices_server" "test-server-2" {
+  name = "my-demo-server-2"
+}
 
-// resource "fauxwebservices_storage_bucket" "test-bucket" {
-//   name = "my-demo-bucket"
-//   size = "50Gb"
-// }
+resource "fauxwebservices_database" "test-database" {
+  name = "my-demo-db"
+}
+
+resource "fauxwebservices_database" "test-database-2" {
+  name = "my-demo-db-2"
+}
+
+resource "fauxwebservices_bucket" "test-bucket" {
+  name = "my-demo-bucket"
+}
 
 // resource "fauxwebservices_vpc" "test-vpc" {
 //   name = "my-demo-vpc"

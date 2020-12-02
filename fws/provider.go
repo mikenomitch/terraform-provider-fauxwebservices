@@ -24,7 +24,9 @@ func Provider() *schema.Provider {
 			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
-			"fauxwebservices_server": resourceServer(),
+			"fauxwebservices_server":   resourceServer(),
+			"fauxwebservices_bucket":   resourceBucket(),
+			"fauxwebservices_database": resourceDatabase(),
 		},
 		DataSourcesMap:       map[string]*schema.Resource{},
 		ConfigureContextFunc: providerConfigure,
