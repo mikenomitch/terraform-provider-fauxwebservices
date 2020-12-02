@@ -1,0 +1,554 @@
+2020/12/01 16:20:34 [INFO] Terraform version: 0.14.0 rc1 
+2020/12/01 16:20:34 [INFO] Go runtime version: go1.15.2
+2020/12/01 16:20:34 [INFO] CLI args: []string{"/Users/mike/.asdf/installs/terraform/0.14.0-rc1/bin/terraform", "destroy"}
+2020/12/01 16:20:34 [DEBUG] Attempting to open CLI config file: /Users/mike/.terraformrc
+2020/12/01 16:20:34 Loading CLI configuration from /Users/mike/.terraformrc
+2020/12/01 16:20:34 Loading CLI configuration from /Users/mike/.terraform.d/credentials.tfrc.json
+2020/12/01 16:20:34 [DEBUG] checking for credentials in "/Users/mike/.terraform.d/plugins"
+2020/12/01 16:20:34 [DEBUG] Explicit provider installation configuration is set
+2020/12/01 16:20:34 [INFO] CLI command args: []string{"destroy"}
+2020/12/01 16:20:34 [TRACE] Meta.Backend: no config given or present on disk, so returning nil config
+2020/12/01 16:20:34 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2020/12/01 16:20:34 [DEBUG] New state was assigned lineage "f188ebce-f2a4-5277-713f-38470fcdec90"
+2020/12/01 16:20:34 [TRACE] Meta.Backend: using default local state only (no backend configuration, and no existing initialized backend)
+2020/12/01 16:20:34 [TRACE] Meta.Backend: instantiated backend of type <nil>
+2020/12/01 16:20:34 [DEBUG] Provider registry.terraform.io/hashicorp/fauxwebservices is overridden to load from /Users/mike/Code/terraform-provider-fauxwebservices
+2020/12/01 16:20:34 [DEBUG] checking for provisioner in "."
+2020/12/01 16:20:34 [DEBUG] checking for provisioner in "/Users/mike/.asdf/installs/terraform/0.14.0-rc1/bin"
+2020/12/01 16:20:34 [DEBUG] checking for provisioner in "/Users/mike/.terraform.d/plugins"
+2020/12/01 16:20:34 [INFO] Failed to read plugin lock file .terraform/plugins/darwin_amd64/lock.json: open .terraform/plugins/darwin_amd64/lock.json: no such file or directory
+2020/12/01 16:20:34 [TRACE] Meta.Backend: backend <nil> does not support operations, so wrapping it in a local backend
+2020/12/01 16:20:34 [INFO] backend/local: starting Apply operation
+2020/12/01 16:20:34 [TRACE] backend/local: requesting state manager for workspace "default"
+2020/12/01 16:20:34 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2020/12/01 16:20:34 [TRACE] backend/local: requesting state lock for workspace "default"
+2020/12/01 16:20:34 [TRACE] statemgr.Filesystem: preparing to manage state snapshots at terraform.tfstate
+2020/12/01 16:20:34 [TRACE] statemgr.Filesystem: existing snapshot has lineage "d197a9c4-db64-bc6e-525a-5b5283760121" serial 1
+2020/12/01 16:20:34 [TRACE] statemgr.Filesystem: locking terraform.tfstate using fcntl flock
+2020/12/01 16:20:34 [TRACE] statemgr.Filesystem: writing lock metadata to .terraform.tfstate.lock.info
+2020/12/01 16:20:34 [TRACE] backend/local: reading remote state for workspace "default"
+2020/12/01 16:20:34 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2020/12/01 16:20:34 [TRACE] statemgr.Filesystem: read snapshot with lineage "d197a9c4-db64-bc6e-525a-5b5283760121" serial 1
+2020/12/01 16:20:34 [TRACE] backend/local: retrieving local state snapshot for workspace "default"
+2020/12/01 16:20:34 [TRACE] backend/local: building context for current working directory
+2020/12/01 16:20:34 [TRACE] terraform.NewContext: starting
+2020/12/01 16:20:34 [TRACE] terraform.NewContext: loading provider schemas
+2020/12/01 16:20:34 [TRACE] LoadSchemas: retrieving schema for provider type "registry.terraform.io/hashicorp/fauxwebservices"
+2020-12-01T16:20:34.134-0800 [INFO]  plugin: configuring client automatic mTLS
+2020-12-01T16:20:34.158-0800 [DEBUG] plugin: starting plugin: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices args=[/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices]
+2020-12-01T16:20:34.161-0800 [DEBUG] plugin: plugin started: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices pid=70848
+2020-12-01T16:20:34.161-0800 [DEBUG] plugin: waiting for RPC address: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices
+2020-12-01T16:20:34.171-0800 [INFO]  plugin.terraform-provider-fauxwebservices: configuring server automatic mTLS: timestamp=2020-12-01T16:20:34.170-0800
+2020-12-01T16:20:34.193-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: plugin address: address=/var/folders/bq/171rtm851494s4q_zmskhm580000gp/T/plugin683136423 network=unix timestamp=2020-12-01T16:20:34.193-0800
+2020-12-01T16:20:34.193-0800 [DEBUG] plugin: using plugin: version=5
+2020/12/01 16:20:34 [TRACE] GRPCProvider: GetSchema
+2020-12-01T16:20:34.239-0800 [TRACE] plugin.stdio: waiting for stdio data
+2020/12/01 16:20:34 [TRACE] GRPCProvider: Close
+2020-12-01T16:20:34.242-0800 [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = transport is closing"
+2020-12-01T16:20:34.243-0800 [DEBUG] plugin: plugin process exited: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices pid=70848
+2020-12-01T16:20:34.243-0800 [DEBUG] plugin: plugin exited
+2020/12/01 16:20:34 [TRACE] terraform.NewContext: complete
+2020/12/01 16:20:34 [TRACE] backend/local: finished building terraform.Context
+2020/12/01 16:20:34 [TRACE] backend/local: requesting interactive input, if necessary
+2020/12/01 16:20:34 [TRACE] Context.Input: Prompting for provider arguments
+2020/12/01 16:20:34 [TRACE] Context.Input: Provider provider.fauxwebservices declared at main.tf:10,1-27
+2020/12/01 16:20:34 [TRACE] Context.Input: Input for provider.fauxwebservices: map[string]cty.Value{}
+2020/12/01 16:20:34 [TRACE] backend/local: running validation operation
+2020/12/01 16:20:34 [INFO] terraform: building graph: GraphTypeValidate
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/12/01 16:20:34 [TRACE] ConfigTransformer: Starting for path: 
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+  ------
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/12/01 16:20:34 [TRACE] StateTransformer: state is empty, so nothing to do
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/12/01 16:20:34 [TRACE] AttachResourceConfigTransformer: attaching to "fauxwebservices_server.test-server-2" (*terraform.NodeValidatableResource) config from main.tf:15,1-50
+2020/12/01 16:20:34 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to fauxwebservices_server.test-server-2
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/12/01 16:20:34 [TRACE] ProviderConfigTransformer: attaching to "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]" provider configuration from main.tf:10,1-27
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/12/01 16:20:34 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/fauxwebservices"] serving fauxwebservices_server.test-server-2
+2020/12/01 16:20:34 [DEBUG] ProviderTransformer: "fauxwebservices_server.test-server-2" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/fauxwebservices"]
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/12/01 16:20:34 [TRACE] AttachSchemaTransformer: attaching resource schema to fauxwebservices_server.test-server-2
+2020/12/01 16:20:34 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider["registry.terraform.io/hashicorp/fauxwebservices"]
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.ModuleExpansionTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.ModuleExpansionTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/12/01 16:20:34 [DEBUG] ReferenceTransformer: "fauxwebservices_server.test-server-2" references: []
+2020/12/01 16:20:34 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]" references: []
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.AttachDependenciesTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.attachDataResourceDependenciesTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.attachDataResourceDependenciesTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+    fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.CloseRootModuleTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.CloseRootModuleTransformer with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+    fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  root - *terraform.nodeCloseModule
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+    fauxwebservices_server.test-server-2 - *terraform.NodeValidatableResource
+  root - *terraform.nodeCloseModule
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/12/01 16:20:34 [DEBUG] Starting graph walk: walkValidate
+2020/12/01 16:20:34 [TRACE] dag/walk: visiting "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]"
+2020/12/01 16:20:34 [TRACE] vertex "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]": starting visit (*terraform.NodeApplyableProvider)
+2020-12-01T16:20:34.244-0800 [INFO]  plugin: configuring client automatic mTLS
+2020-12-01T16:20:34.265-0800 [DEBUG] plugin: starting plugin: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices args=[/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices]
+2020-12-01T16:20:34.268-0800 [DEBUG] plugin: plugin started: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices pid=70849
+2020-12-01T16:20:34.268-0800 [DEBUG] plugin: waiting for RPC address: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices
+2020-12-01T16:20:34.277-0800 [INFO]  plugin.terraform-provider-fauxwebservices: configuring server automatic mTLS: timestamp=2020-12-01T16:20:34.277-0800
+2020-12-01T16:20:34.299-0800 [DEBUG] plugin: using plugin: version=5
+2020-12-01T16:20:34.299-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: plugin address: address=/var/folders/bq/171rtm851494s4q_zmskhm580000gp/T/plugin218501972 network=unix timestamp=2020-12-01T16:20:34.299-0800
+2020/12/01 16:20:34 [TRACE] BuiltinEvalContext: Initialized "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]" provider for provider["registry.terraform.io/hashicorp/fauxwebservices"]
+2020-12-01T16:20:34.345-0800 [TRACE] plugin.stdio: waiting for stdio data
+2020/12/01 16:20:34 [TRACE] buildProviderConfig for provider["registry.terraform.io/hashicorp/fauxwebservices"]: using explicit config only
+2020/12/01 16:20:34 [TRACE] GRPCProvider: GetSchema
+2020/12/01 16:20:34 [TRACE] GRPCProvider: PrepareProviderConfig
+2020/12/01 16:20:34 [TRACE] vertex "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]": visit complete
+2020/12/01 16:20:34 [TRACE] dag/walk: visiting "fauxwebservices_server.test-server-2"
+2020/12/01 16:20:34 [TRACE] vertex "fauxwebservices_server.test-server-2": starting visit (*terraform.NodeValidatableResource)
+2020/12/01 16:20:34 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/12/01 16:20:34 [TRACE] vertex "fauxwebservices_server.test-server-2": visit complete
+2020/12/01 16:20:34 [TRACE] dag/walk: visiting "meta.count-boundary (EachMode fixup)"
+2020/12/01 16:20:34 [TRACE] vertex "meta.count-boundary (EachMode fixup)": starting visit (*terraform.NodeCountBoundary)
+2020/12/01 16:20:34 [TRACE] dag/walk: visiting "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"] (close)"
+2020/12/01 16:20:34 [TRACE] vertex "meta.count-boundary (EachMode fixup)": visit complete
+2020/12/01 16:20:34 [TRACE] vertex "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"] (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/12/01 16:20:34 [TRACE] GRPCProvider: Close
+2020-12-01T16:20:34.347-0800 [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = transport is closing"
+2020-12-01T16:20:34.348-0800 [DEBUG] plugin: plugin process exited: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices pid=70849
+2020-12-01T16:20:34.348-0800 [DEBUG] plugin: plugin exited
+2020/12/01 16:20:34 [TRACE] vertex "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"] (close)": visit complete
+2020/12/01 16:20:34 [TRACE] dag/walk: visiting "root"
+2020/12/01 16:20:34 [TRACE] vertex "root": starting visit (*terraform.nodeCloseModule)
+2020/12/01 16:20:34 [TRACE] vertex "root": visit complete
+2020/12/01 16:20:34 [INFO] backend/local: apply calling Plan
+2020/12/01 16:20:34 [INFO] terraform: building graph: GraphTypePlanDestroy
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/12/01 16:20:34 [TRACE] StateTransformer: creating nodes for both current and deposed instance objects
+2020/12/01 16:20:34 [TRACE] StateTransformer: added *terraform.NodePlanDestroyableResourceInstance for fauxwebservices_server.test-server-2 current object
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.StateTransformer with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodePlanDestroyableResourceInstance
+  ------
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/12/01 16:20:34 [TRACE] AttachResourceConfigTransformer: attaching to "fauxwebservices_server.test-server-2" (*terraform.NodePlanDestroyableResourceInstance) config from main.tf:15,1-50
+2020/12/01 16:20:34 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to fauxwebservices_server.test-server-2
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/12/01 16:20:34 [TRACE] ProviderConfigTransformer: attaching to "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]" provider configuration from main.tf:10,1-27
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodePlanDestroyableResourceInstance
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/12/01 16:20:34 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/fauxwebservices"] serving fauxwebservices_server.test-server-2
+2020/12/01 16:20:34 [DEBUG] ProviderTransformer: "fauxwebservices_server.test-server-2" (*terraform.NodePlanDestroyableResourceInstance) needs provider["registry.terraform.io/hashicorp/fauxwebservices"]
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodePlanDestroyableResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/12/01 16:20:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodePlanDestroyableResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.DestroyEdgeTransformer
+2020/12/01 16:20:34 [TRACE] DestroyEdgeTransformer: "fauxwebservices_server.test-server-2" (*terraform.NodePlanDestroyableResourceInstance) destroys fauxwebservices_server.test-server-2
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.DestroyEdgeTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodePlanDestroyableResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+    fauxwebservices_server.test-server-2 - *terraform.NodePlanDestroyableResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.CloseRootModuleTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.CloseRootModuleTransformer with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodePlanDestroyableResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+    fauxwebservices_server.test-server-2 - *terraform.NodePlanDestroyableResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  root - *terraform.nodeCloseModule
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/12/01 16:20:34 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/12/01 16:20:34 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  fauxwebservices_server.test-server-2 - *terraform.NodePlanDestroyableResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+    fauxwebservices_server.test-server-2 - *terraform.NodePlanDestroyableResourceInstance
+  root - *terraform.nodeCloseModule
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/12/01 16:20:34 [DEBUG] Starting graph walk: walkPlanDestroy
+2020/12/01 16:20:34 [TRACE] dag/walk: visiting "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]"
+2020/12/01 16:20:34 [TRACE] vertex "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]": starting visit (*terraform.NodeApplyableProvider)
+2020-12-01T16:20:34.349-0800 [INFO]  plugin: configuring client automatic mTLS
+2020-12-01T16:20:34.370-0800 [DEBUG] plugin: starting plugin: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices args=[/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices]
+2020-12-01T16:20:34.373-0800 [DEBUG] plugin: plugin started: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices pid=70850
+2020-12-01T16:20:34.373-0800 [DEBUG] plugin: waiting for RPC address: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices
+2020-12-01T16:20:34.382-0800 [INFO]  plugin.terraform-provider-fauxwebservices: configuring server automatic mTLS: timestamp=2020-12-01T16:20:34.382-0800
+2020-12-01T16:20:34.404-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: plugin address: address=/var/folders/bq/171rtm851494s4q_zmskhm580000gp/T/plugin689229345 network=unix timestamp=2020-12-01T16:20:34.404-0800
+2020-12-01T16:20:34.404-0800 [DEBUG] plugin: using plugin: version=5
+2020/12/01 16:20:34 [TRACE] BuiltinEvalContext: Initialized "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]" provider for provider["registry.terraform.io/hashicorp/fauxwebservices"]
+2020-12-01T16:20:34.450-0800 [TRACE] plugin.stdio: waiting for stdio data
+2020/12/01 16:20:34 [TRACE] vertex "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]": visit complete
+2020/12/01 16:20:34 [TRACE] dag/walk: visiting "fauxwebservices_server.test-server-2"
+2020/12/01 16:20:34 [TRACE] vertex "fauxwebservices_server.test-server-2": starting visit (*terraform.NodePlanDestroyableResourceInstance)
+2020/12/01 16:20:34 [TRACE] ReadResourceInstanceState: reading state for fauxwebservices_server.test-server-2
+2020/12/01 16:20:34 [TRACE] UpgradeResourceState: schema version of fauxwebservices_server.test-server-2 is still 0; calling provider "fauxwebservices" for any other minor fixups
+2020/12/01 16:20:34 [TRACE] GRPCProvider: UpgradeResourceState
+2020/12/01 16:20:34 [TRACE] GRPCProvider: GetSchema
+2020/12/01 16:20:34 [TRACE] EvalWriteDiff: recorded Delete change for fauxwebservices_server.test-server-2
+2020/12/01 16:20:34 [TRACE] vertex "fauxwebservices_server.test-server-2": visit complete
+2020/12/01 16:20:34 [TRACE] dag/walk: visiting "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"] (close)"
+2020/12/01 16:20:34 [TRACE] vertex "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"] (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/12/01 16:20:34 [TRACE] GRPCProvider: Close
+2020-12-01T16:20:34.451-0800 [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = transport is closing"
+2020-12-01T16:20:34.452-0800 [DEBUG] plugin: plugin process exited: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices pid=70850
+2020-12-01T16:20:34.453-0800 [DEBUG] plugin: plugin exited
+2020/12/01 16:20:34 [TRACE] vertex "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"] (close)": visit complete
+2020/12/01 16:20:34 [TRACE] dag/walk: visiting "root"
+2020/12/01 16:20:34 [TRACE] vertex "root": starting visit (*terraform.nodeCloseModule)
+2020/12/01 16:20:34 [TRACE] vertex "root": visit complete
+2020/12/01 16:20:34 [DEBUG] command: asking for input: "Do you really want to destroy all resources?"
+2020/12/01 16:20:37 [INFO] backend/local: apply calling Apply
+2020/12/01 16:20:37 [INFO] terraform: building graph: GraphTypeApply
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/12/01 16:20:37 [TRACE] ConfigTransformer: Starting for path: 
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  fauxwebservices_server.test-server-2 (expand) - *terraform.nodeExpandApplyableResource
+  ------
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.DiffTransformer
+2020/12/01 16:20:37 [TRACE] DiffTransformer starting
+2020/12/01 16:20:37 [TRACE] DiffTransformer: found Delete change for fauxwebservices_server.test-server-2 
+2020/12/01 16:20:37 [TRACE] DiffTransformer: fauxwebservices_server.test-server-2 will be represented for destruction by fauxwebservices_server.test-server-2 (destroy)
+2020/12/01 16:20:37 [TRACE] DiffTransformer complete
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.DiffTransformer with new graph:
+  fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+  fauxwebservices_server.test-server-2 (expand) - *terraform.nodeExpandApplyableResource
+  ------
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/12/01 16:20:37 [TRACE] AttachResourceConfigTransformer: attaching to "fauxwebservices_server.test-server-2 (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:15,1-50
+2020/12/01 16:20:37 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to fauxwebservices_server.test-server-2 (expand)
+2020/12/01 16:20:37 [TRACE] AttachResourceConfigTransformer: attaching to "fauxwebservices_server.test-server-2 (destroy)" (*terraform.NodeDestroyResourceInstance) config from main.tf:15,1-50
+2020/12/01 16:20:37 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to fauxwebservices_server.test-server-2 (destroy)
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/12/01 16:20:37 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/12/01 16:20:37 [TRACE] ProviderConfigTransformer: attaching to "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]" provider configuration from main.tf:10,1-27
+2020/12/01 16:20:37 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+  fauxwebservices_server.test-server-2 (expand) - *terraform.nodeExpandApplyableResource
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:37 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/12/01 16:20:37 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/12/01 16:20:37 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/fauxwebservices"] serving fauxwebservices_server.test-server-2 (expand)
+2020/12/01 16:20:37 [DEBUG] ProviderTransformer: "fauxwebservices_server.test-server-2 (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/fauxwebservices"]
+2020/12/01 16:20:37 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/fauxwebservices"] serving fauxwebservices_server.test-server-2 (destroy)
+2020/12/01 16:20:37 [DEBUG] ProviderTransformer: "fauxwebservices_server.test-server-2 (destroy)" (*terraform.NodeDestroyResourceInstance) needs provider["registry.terraform.io/hashicorp/fauxwebservices"]
+2020/12/01 16:20:37 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  fauxwebservices_server.test-server-2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:37 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/12/01 16:20:37 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/12/01 16:20:37 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  fauxwebservices_server.test-server-2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/12/01 16:20:37 [TRACE] AttachSchemaTransformer: attaching resource schema to fauxwebservices_server.test-server-2 (destroy)
+2020/12/01 16:20:37 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider["registry.terraform.io/hashicorp/fauxwebservices"]
+2020/12/01 16:20:37 [TRACE] AttachSchemaTransformer: attaching resource schema to fauxwebservices_server.test-server-2 (expand)
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.ModuleExpansionTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.ModuleExpansionTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/12/01 16:20:37 [DEBUG] ReferenceTransformer: "fauxwebservices_server.test-server-2 (expand)" references: []
+2020/12/01 16:20:37 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]" references: []
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.AttachDependenciesTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2020/12/01 16:20:37 [TRACE] ForcedCBDTransformer: "fauxwebservices_server.test-server-2 (destroy)" (*terraform.NodeDestroyResourceInstance) has no CBD descendent, so skipping
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.DestroyEdgeTransformer
+2020/12/01 16:20:37 [TRACE] DestroyEdgeTransformer: "fauxwebservices_server.test-server-2 (destroy)" (*terraform.NodeDestroyResourceInstance) destroys fauxwebservices_server.test-server-2
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.DestroyEdgeTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.CBDEdgeTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.CBDEdgeTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.pruneUnusedNodesTransformer
+2020/12/01 16:20:37 [DEBUG] pruneUnusedNodes: fauxwebservices_server.test-server-2 (expand) is no longer needed, removing
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.pruneUnusedNodesTransformer with new graph:
+  fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+    fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  ------
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.CloseRootModuleTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.CloseRootModuleTransformer with new graph:
+  fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+    fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  root - *terraform.nodeCloseModule
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/12/01 16:20:37 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/12/01 16:20:37 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+    fauxwebservices_server.test-server-2 (destroy) - *terraform.NodeDestroyResourceInstance
+  root - *terraform.nodeCloseModule
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider["registry.terraform.io/hashicorp/fauxwebservices"] (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/12/01 16:20:37 [DEBUG] Starting graph walk: walkDestroy
+2020/12/01 16:20:37 [TRACE] dag/walk: visiting "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]"
+2020/12/01 16:20:37 [TRACE] vertex "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]": starting visit (*terraform.NodeApplyableProvider)
+2020-12-01T16:20:37.624-0800 [INFO]  plugin: configuring client automatic mTLS
+2020-12-01T16:20:37.650-0800 [DEBUG] plugin: starting plugin: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices args=[/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices]
+2020-12-01T16:20:37.653-0800 [DEBUG] plugin: plugin started: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices pid=70854
+2020-12-01T16:20:37.653-0800 [DEBUG] plugin: waiting for RPC address: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices
+2020-12-01T16:20:37.664-0800 [INFO]  plugin.terraform-provider-fauxwebservices: configuring server automatic mTLS: timestamp=2020-12-01T16:20:37.663-0800
+2020-12-01T16:20:37.689-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: plugin address: address=/var/folders/bq/171rtm851494s4q_zmskhm580000gp/T/plugin490485621 network=unix timestamp=2020-12-01T16:20:37.689-0800
+2020-12-01T16:20:37.689-0800 [DEBUG] plugin: using plugin: version=5
+2020/12/01 16:20:37 [TRACE] BuiltinEvalContext: Initialized "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]" provider for provider["registry.terraform.io/hashicorp/fauxwebservices"]
+2020-12-01T16:20:37.734-0800 [TRACE] plugin.stdio: waiting for stdio data
+2020/12/01 16:20:37 [TRACE] buildProviderConfig for provider["registry.terraform.io/hashicorp/fauxwebservices"]: using explicit config only
+2020/12/01 16:20:37 [TRACE] GRPCProvider: GetSchema
+2020/12/01 16:20:37 [TRACE] GRPCProvider: Configure
+2020/12/01 16:20:37 [TRACE] vertex "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"]": visit complete
+2020/12/01 16:20:37 [TRACE] dag/walk: visiting "fauxwebservices_server.test-server-2 (destroy)"
+2020/12/01 16:20:37 [TRACE] vertex "fauxwebservices_server.test-server-2 (destroy)": starting visit (*terraform.NodeDestroyResourceInstance)
+2020/12/01 16:20:37 [TRACE] EvalReadDiff: Read Delete change from plan for fauxwebservices_server.test-server-2
+2020/12/01 16:20:37 [TRACE] ReadResourceInstanceState: reading state for fauxwebservices_server.test-server-2
+2020/12/01 16:20:37 [TRACE] UpgradeResourceState: schema version of fauxwebservices_server.test-server-2 is still 0; calling provider "fauxwebservices" for any other minor fixups
+2020/12/01 16:20:37 [TRACE] GRPCProvider: UpgradeResourceState
+2020/12/01 16:20:37 [DEBUG] EvalApply: ProviderMeta config value set
+2020/12/01 16:20:37 [DEBUG] fauxwebservices_server.test-server-2: applying the planned Delete change
+2020/12/01 16:20:37 [TRACE] GRPCProvider: ApplyResourceChange
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: panic: runtime error: invalid memory address or nil pointer dereference
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: [signal SIGSEGV: segmentation violation code=0x1 addr=0x8 pc=0x155e0bf]
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: goroutine 69 [running]:
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: bytes.(*Buffer).Len(...)
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/.asdf/installs/golang/1.14.4/go/src/bytes/buffer.go:73
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: net/http.NewRequestWithContext(0x1956d00, 0xc00003a2f0, 0x1836a39, 0x6, 0xc000732180, 0x53, 0x1943d60, 0x0, 0x100e126, 0xc00031e820, ...)
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/.asdf/installs/golang/1.14.4/go/src/net/http/request.go:878 +0x53f
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: net/http.NewRequest(...)
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/.asdf/installs/golang/1.14.4/go/src/net/http/request.go:816
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: github.com/hashicorp/terraform-provider-fauxwebservices/client.(*Client).NewRequest(0xc000688c30, 0x1836a39, 0x6, 0xc000728180, 0x30, 0x0, 0x0, 0x0, 0x0, 0x0)
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/Code/terraform-provider-fauxwebservices/client/client.go:109 +0x2db
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: github.com/hashicorp/terraform-provider-fauxwebservices/client.(*Client).DeleteServer(0xc000688c30, 0xc0007184a0, 0x13, 0x1e79c80, 0x1956d40)
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/Code/terraform-provider-fauxwebservices/client/servers.go:90 +0xd4
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: github.com/hashicorp/terraform-provider-fauxwebservices/fws.resourceServerDelete(0x1956d40, 0xc00071aa20, 0xc0000f3100, 0x17c3000, 0xc000688c30, 0xc000720d20, 0xc0007497a0, 0x100e998)
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/Code/terraform-provider-fauxwebservices/fws/resource_server.go:110 +0x8d
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema.(*Resource).delete(0xc0003224d0, 0x1956cc0, 0xc000722300, 0xc0000f3100, 0x17c3000, 0xc000688c30, 0x0, 0x0, 0x0)
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/go/pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.3.0/helper/schema/resource.go:311 +0x1ec
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema.(*Resource).Apply(0xc0003224d0, 0x1956cc0, 0xc000722300, 0xc0001e45b0, 0xc0005b4fa0, 0x17c3000, 0xc000688c30, 0x0, 0x0, 0x0, ...)
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/go/pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.3.0/helper/schema/resource.go:358 +0x92b
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema.(*GRPCProviderServer).ApplyResourceChange(0xc0003140c0, 0x1956cc0, 0xc000722300, 0xc000724c30, 0xc000722300, 0xc00071a300, 0x1962100)
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/go/pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.3.0/helper/schema/grpc_provider.go:951 +0x8b2
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: github.com/hashicorp/terraform-plugin-go/tfprotov5/server.(*server).ApplyResourceChange(0xc0005935a0, 0x1956cc0, 0xc000722300, 0xc0001e4380, 0xc0005935a0, 0xc000221e60, 0xc00073eba0)
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/go/pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.1.0/tfprotov5/server/server.go:331 +0xac
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: github.com/hashicorp/terraform-plugin-go/tfprotov5/internal/tfplugin5._Provider_ApplyResourceChange_Handler(0x17fe940, 0xc0005935a0, 0x1956d80, 0xc000221e60, 0xc00071a3c0, 0x0, 0x1956d80, 0xc000221e60, 0xc00075c000, 0x6d)
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/go/pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.1.0/tfprotov5/internal/tfplugin5/tfplugin5_grpc.pb.go:380 +0x217
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: google.golang.org/grpc.(*Server).processUnaryRPC(0xc000336380, 0x195f720, 0xc0002faf00, 0xc000128200, 0xc0000a67b0, 0x1e6da00, 0x0, 0x0, 0x0)
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/go/pkg/mod/google.golang.org/grpc@v1.32.0/server.go:1194 +0x50a
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: google.golang.org/grpc.(*Server).handleStream(0xc000336380, 0x195f720, 0xc0002faf00, 0xc000128200, 0x0)
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/go/pkg/mod/google.golang.org/grpc@v1.32.0/server.go:1517 +0xcfd
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: google.golang.org/grpc.(*Server).serveStreams.func1.2(0xc00030a1b0, 0xc000336380, 0x195f720, 0xc0002faf00, 0xc000128200)
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/go/pkg/mod/google.golang.org/grpc@v1.32.0/server.go:859 +0xa1
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: created by google.golang.org/grpc.(*Server).serveStreams.func1
+2020-12-01T16:20:37.739-0800 [DEBUG] plugin.terraform-provider-fauxwebservices: 	/Users/mike/go/pkg/mod/google.golang.org/grpc@v1.32.0/server.go:857 +0x204
+2020-12-01T16:20:37.740-0800 [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = transport is closing"
+2020/12/01 16:20:37 [DEBUG] fauxwebservices_server.test-server-2: apply errored, but we're indicating that via the Error pointer rather than returning it: rpc error: code = Unavailable desc = transport is closing
+2020/12/01 16:20:37 [TRACE] EvalWriteState: writing current state object for fauxwebservices_server.test-server-2
+2020-12-01T16:20:37.741-0800 [DEBUG] plugin: plugin process exited: path=/Users/mike/Code/terraform-provider-fauxwebservices/terraform-provider-fauxwebservices pid=70854 error="exit status 2"
+2020/12/01 16:20:37 [TRACE] vertex "fauxwebservices_server.test-server-2 (destroy)": visit complete
+2020/12/01 16:20:37 [TRACE] dag/walk: upstream of "provider[\"registry.terraform.io/hashicorp/fauxwebservices\"] (close)" errored, so skipping
+2020/12/01 16:20:37 [TRACE] dag/walk: upstream of "meta.count-boundary (EachMode fixup)" errored, so skipping
+2020/12/01 16:20:37 [TRACE] dag/walk: upstream of "root" errored, so skipping
+2020/12/01 16:20:37 [TRACE] statemgr.Filesystem: creating backup snapshot at terraform.tfstate.backup
+2020/12/01 16:20:37 [TRACE] statemgr.Filesystem: state has changed since last snapshot, so incrementing serial to 2
+2020/12/01 16:20:37 [TRACE] statemgr.Filesystem: writing snapshot at terraform.tfstate
+2020/12/01 16:20:37 [TRACE] statemgr.Filesystem: removing lock metadata file .terraform.tfstate.lock.info
+2020/12/01 16:20:37 [TRACE] statemgr.Filesystem: unlocking terraform.tfstate using fcntl flock
+2020-12-01T16:20:37.754-0800 [DEBUG] plugin: plugin exited

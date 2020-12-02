@@ -1,21 +1,23 @@
 package client
 
 import (
-	"encoding/json"
+	"bytes"
 	"errors"
 	"fmt"
-	"strings"
+
+	"github.com/svanharmelen/jsonapi"
 )
 
 // Server -
 type Server struct {
-	ID   int `jsonapi:"id,omitempty"`
-	Name int `jsonapi:"name,omitempty"`
+	ID   string `jsonapi:"primary,fake-resources"`
+	Name string `jsonapi:"attr,name,omitempty"`
 }
 
 // GetServer - Returns a specifc server
 func (c *Client) GetServer(serverID string) (*Server, error) {
-	req, err := c.NewRequest("GET", fmt.Sprintf("api/v2/fake-resources/server/%s", serverID), nil)
+	s := new(Server)
+	req, err := c.NewRequest("GET", fmt.Sprintf("api/v2/fake-resources/server/%s", serverID), s)
 	if err != nil {
 		return nil, err
 	}
@@ -25,18 +27,20 @@ func (c *Client) GetServer(serverID string) (*Server, error) {
 		return nil, err
 	}
 
-	server := Server{}
-	err = json.Unmarshal(body, &server)
+	r := bytes.NewReader(body)
+	server := new(Server)
+
+	err = jsonapi.UnmarshalPayload(r, server)
 	if err != nil {
 		return nil, err
 	}
 
-	return &server, nil
+	return server, nil
 }
 
 // CreateServer - Create new server
-func (c *Client) CreateServer(name string) (*Server, error) {
-	req, err := c.NewRequest("POST", "api/v2/fake-resources/server", strings.NewReader(name))
+func (c *Client) CreateServer(s *Server) (*Server, error) {
+	req, err := c.NewRequest("POST", "api/v2/fake-resources/server", s)
 	if err != nil {
 		return nil, err
 	}
@@ -46,18 +50,21 @@ func (c *Client) CreateServer(name string) (*Server, error) {
 		return nil, err
 	}
 
-	server := Server{}
-	err = json.Unmarshal(body, &server)
+	r := bytes.NewReader(body)
+	server := new(Server)
+
+	err = jsonapi.UnmarshalPayload(r, server)
 	if err != nil {
 		return nil, err
 	}
 
-	return &server, nil
+	return server, nil
 }
 
 // UpdateServer - Updates a server
-func (c *Client) UpdateServer(serverID string, name string) (*Server, error) {
-	req, err := c.NewRequest("PUT", fmt.Sprintf("api/v2/fake-resources/server/%s", serverID), strings.NewReader(name))
+func (c *Client) UpdateServer(s *Server) (*Server, error) {
+	req, err := c.NewRequest("PUT", fmt.Sprintf("api/v2/fake-resources/server/%s", s.ID), s)
+
 	if err != nil {
 		return nil, err
 	}
@@ -67,13 +74,15 @@ func (c *Client) UpdateServer(serverID string, name string) (*Server, error) {
 		return nil, err
 	}
 
-	server := Server{}
-	err = json.Unmarshal(body, &server)
+	r := bytes.NewReader(body)
+	server := new(Server)
+
+	err = jsonapi.UnmarshalPayload(r, server)
 	if err != nil {
 		return nil, err
 	}
 
-	return &server, nil
+	return server, nil
 }
 
 // DeleteServer - Deletes a server

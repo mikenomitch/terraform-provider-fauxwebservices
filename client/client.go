@@ -1,19 +1,18 @@
 package client
 
 import (
+	"bytes"
 	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"time"
+
+	"github.com/svanharmelen/jsonapi"
 )
 
 // HostURL - Default Hashicups URL
 const HostURL string = "https://tfe-zone-cc09c2e7.ngrok.io"
-
-// DefaultToken - Default Token to be removed
-const DefaultToken string = "TODOFILLIN"
 
 // Client -
 type Client struct {
@@ -27,9 +26,7 @@ type Client struct {
 func NewClient(host, token *string) (*Client, error) {
 	c := Client{
 		HTTPClient: &http.Client{Timeout: 10 * time.Second},
-		// Default Hashicups URL
-		HostURL: HostURL,
-		Token:   DefaultToken,
+		HostURL:    HostURL,
 	}
 
 	if host != nil {
@@ -76,7 +73,7 @@ func (c *Client) doRequest(req *http.Request) ([]byte, error) {
 // If v is supplied, the value will be JSONAPI encoded and included as the
 // request body. If the method is GET, the value will be parsed and added as
 // query parameters.
-func (c *Client) NewRequest(method, path string, body *strings.Reader) (*http.Request, error) {
+func (c *Client) NewRequest(method, path string, v interface{}) (*http.Request, error) {
 	u, err := c.BaseURL.Parse(path)
 	if err != nil {
 		return nil, err
@@ -89,23 +86,46 @@ func (c *Client) NewRequest(method, path string, body *strings.Reader) (*http.Re
 	switch method {
 	case "GET":
 		reqHeaders.Set("Accept", "application/vnd.api+json")
-	case "DELETE", "PATCH", "POST":
+	case "DELETE", "PATCH", "POST", "PUT":
 		reqHeaders.Set("Accept", "application/vnd.api+json")
 		reqHeaders.Set("Content-Type", "application/vnd.api+json")
-	case "PUT":
-		reqHeaders.Set("Accept", "application/json")
-		reqHeaders.Set("Content-Type", "application/octet-stream")
 	}
 
-	req, err := http.NewRequest(method, u.String(), body)
-	if err != nil {
-		return nil, err
+	var r *http.Request
+
+	// TODO: HANDLE DESTROY PROPERLY
+
+	if v != nil {
+		body, err := c.marshall(v)
+		if err != nil {
+			return nil, err
+		}
+
+		req, err := http.NewRequest(method, u.String(), body)
+		r = req
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		req, err := http.NewRequest(method, u.String(), nil)
+		r = req
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	// Set the request specific headers.
 	for k, v := range reqHeaders {
-		req.Header[k] = v
+		r.Header[k] = v
 	}
 
-	return req, nil
+	return r, nil
+}
+
+func (c *Client) marshall(v interface{}) (*bytes.Buffer, error) {
+	buf := bytes.NewBuffer(nil)
+	if err := jsonapi.MarshalPayloadWithoutIncluded(buf, v); err != nil {
+		return nil, err
+	}
+	return buf, nil
 }

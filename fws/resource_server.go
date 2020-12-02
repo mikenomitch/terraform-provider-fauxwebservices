@@ -2,7 +2,6 @@ package fws
 
 import (
 	"context"
-	"strconv"
 	"time"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
@@ -37,12 +36,16 @@ func resourceServerCreate(ctx context.Context, d *schema.ResourceData, m interfa
 	var diags diag.Diagnostics
 
 	name := d.Get("name").(string)
-	o, err := c.CreateServer(name)
+
+	server := new(client.Server)
+	server.Name = name
+
+	o, err := c.CreateServer(server)
 	if err != nil {
 		return diag.FromErr(err)
 	}
 
-	d.SetId(strconv.Itoa(o.ID))
+	d.SetId(o.ID)
 
 	resourceServerRead(ctx, d, m)
 
@@ -58,6 +61,9 @@ func resourceServerRead(ctx context.Context, d *schema.ResourceData, m interface
 	serverID := d.Id()
 
 	server, err := c.GetServer(serverID)
+	if err != nil {
+		return diag.FromErr(err)
+	}
 
 	if err := d.Set("name", server.Name); err != nil {
 		return diag.FromErr(err)
@@ -77,7 +83,12 @@ func resourceServerUpdate(ctx context.Context, d *schema.ResourceData, m interfa
 
 	if d.HasChange("name") {
 		name := d.Get("name").(string)
-		_, err := c.UpdateServer(serverID, name)
+
+		server := new(client.Server)
+		server.ID = serverID
+		server.Name = name
+
+		_, err := c.UpdateServer(server)
 		if err != nil {
 			return diag.FromErr(err)
 		}
